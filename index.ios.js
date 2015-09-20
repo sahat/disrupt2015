@@ -57,6 +57,7 @@ var disrupt2015 = React.createClass({
               customTitle={<CustomTitle/>}
               buttonsColor="white"
               titleColor="white"
+              statusBar="lightContent"
               customNext={<CustomNextButton />}
               customPrev={<CustomPrevButton />}
               onNext={() => alert('Next button click handler')}
@@ -77,7 +78,7 @@ class EmptyPage extends React.Component {
     this.state = {
       dataSource: ds.cloneWithRows([
         {
-          status: 'Ready for Pickup',
+          status: 'ready',
           customer: {
             name: 'Dan Seider',
             photo: 'http://i.imgur.com/XWRhrUC.jpg'
@@ -99,9 +100,9 @@ class EmptyPage extends React.Component {
           ]
         },
         {
-          status: 'In Progress',
+          status: 'in_progress',
           customer: {
-            name: 'Steve Jobs',
+            name: 'Casey C. Roberts',
             photo: 'http://i.imgur.com/rTwvkDN.jpg'
           },
           pickupTime: '6:15 PM',
@@ -121,12 +122,12 @@ class EmptyPage extends React.Component {
           ]
         },
         {
-          status: 'In Progress',
+          status: 'in_progress',
           customer: {
-            name: 'Steve Jobs',
-            photo: 'http://i.imgur.com/rTwvkDN.jpg'
+            name: 'Elizabeth W. Davis',
+            photo: 'http://i.imgur.com/HJQ6b3M.jpg'
           },
-          pickupTime: '6:15 PM',
+          pickupTime: '5:30 PM',
           items: [
             {
               image: 'http://i5.walmartimages.com/dfw/dce07b8c-1b24/k2-_6883b400-953a-4171-9da3-3cac0b502f47.v1.jpg'
@@ -143,34 +144,12 @@ class EmptyPage extends React.Component {
           ]
         },
         {
-          status: 'In Progress',
+          status: 'received',
           customer: {
-            name: 'Steve Jobs',
-            photo: 'http://i.imgur.com/rTwvkDN.jpg'
+            name: 'Eugene V. Lane',
+            photo: 'http://i.imgur.com/yQaVS1f.jpg'
           },
-          pickupTime: '6:15 PM',
-          items: [
-            {
-              image: 'http://i5.walmartimages.com/dfw/dce07b8c-1b24/k2-_6883b400-953a-4171-9da3-3cac0b502f47.v1.jpg'
-            },
-            {
-              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-ff07/k2-_2a609791-dce8-4b9c-8e18-2ea4b11ba22c.v3.jpg-b9a07f3ea413c5a38f76a34ba7365e1404207a83-webp-450x450.jpg'
-            },
-            {
-              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-20a3/k2-_64c47dad-5d13-4f20-82fb-caa3a793d9ab.v1.jpg-5873a66dd7e0ed3ac2db50252fa0ec12f9c30999-webp-450x450.jpg'
-            },
-            {
-              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-5433/k2-_30a6bd22-4a19-4be8-bdb3-490d3ae31a4c.v6.jpg-9e658601edc1d17dc97bc281105c01afb13c9855-webp-450x450.jpg'
-            }
-          ]
-        },
-        {
-          status: 'In Progress',
-          customer: {
-            name: 'Steve Jobs',
-            photo: 'http://i.imgur.com/rTwvkDN.jpg'
-          },
-          pickupTime: '6:15 PM',
+          pickupTime: '8:00 PM',
           items: [
             {
               image: 'http://i5.walmartimages.com/dfw/dce07b8c-1b24/k2-_6883b400-953a-4171-9da3-3cac0b502f47.v1.jpg'
@@ -208,14 +187,34 @@ class EmptyPage extends React.Component {
         <Image style={styles.item} source={{ uri: item.image }}/>
       )
     });
+
+    var statusText;
+    var statusColor;
+    switch (rowData.status) {
+      case 'in_progress':
+        statusText = 'In Progress';
+        statusColor = '#f1c40f';
+        break;
+      case 'ready':
+        statusText = 'Ready for Pickup';
+        statusColor = '#2ecc71';
+        break;
+      case 'received':
+        statusText = 'Order Received';
+        statusColor = '#3498db';
+        break;
+      default:
+        statusText = 'TBD';
+    }
+
     return (
       <TouchableHighlight onPress={() => this.onPressRow(rowID)}>
         <View>
           <View style={styles.row}>
             <Image style={styles.avatar} source={{ uri: rowData.customer.photo }}/>
             <View style={{ flexDirection: 'column' }}>
-              <Text style={{ fontFamily: 'Brandon Grotesque', color: '#080' }}>
-                {rowData.status.toUpperCase()}
+              <Text style={{ fontWeight: 'bold', fontFamily: 'Brandon Grotesque', color: statusColor }}>
+                {statusText.toUpperCase()}
               </Text>
               <Text style={{ fontFamily: 'Brandon Grotesque' }}>
                 {rowData.customer.name}
