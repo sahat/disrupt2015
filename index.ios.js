@@ -79,7 +79,7 @@ class EmptyPage extends React.Component {
         {
           status: 'Ready for Pickup',
           customer: {
-            name:  'Dan Seider',
+            name: 'Dan Seider',
             photo: 'http://i.imgur.com/XWRhrUC.jpg'
           },
           pickupLocation: 'A',
@@ -101,7 +101,7 @@ class EmptyPage extends React.Component {
         {
           status: 'In Progress',
           customer: {
-            name:  'Steve Jobs',
+            name: 'Steve Jobs',
             photo: 'http://i.imgur.com/rTwvkDN.jpg'
           },
           pickupTime: '6:15 PM',
@@ -123,7 +123,7 @@ class EmptyPage extends React.Component {
         {
           status: 'In Progress',
           customer: {
-            name:  'Steve Jobs',
+            name: 'Steve Jobs',
             photo: 'http://i.imgur.com/rTwvkDN.jpg'
           },
           pickupTime: '6:15 PM',
@@ -145,7 +145,7 @@ class EmptyPage extends React.Component {
         {
           status: 'In Progress',
           customer: {
-            name:  'Steve Jobs',
+            name: 'Steve Jobs',
             photo: 'http://i.imgur.com/rTwvkDN.jpg'
           },
           pickupTime: '6:15 PM',
@@ -167,7 +167,7 @@ class EmptyPage extends React.Component {
         {
           status: 'In Progress',
           customer: {
-            name:  'Steve Jobs',
+            name: 'Steve Jobs',
             photo: 'http://i.imgur.com/rTwvkDN.jpg'
           },
           pickupTime: '6:15 PM',
@@ -261,12 +261,14 @@ class CustomTitle extends React.Component {
 class CustomPrevButton extends React.Component {
   render() {
     return (
-      <Icon
-        name='ion|navicon'
-        size={30}
-        color='white'
-        style={styles.icon}
-        />
+      <TouchableOpacity onPress={() => alert('Menu') }>
+        <Icon
+          name='ion|navicon'
+          size={30}
+          color='white'
+          style={styles.icon}
+          />
+      </TouchableOpacity>
     );
   }
 }
@@ -274,7 +276,7 @@ class CustomPrevButton extends React.Component {
 class CustomNextButton extends React.Component {
   render() {
     return (
-      <TouchableOpacity onPress={() => alert('prev') }>
+      <TouchableOpacity onPress={() => alert('It is a hackathon...no one has time to implement authentication.') }>
         <Text style={styles.customButton}>SIGN IN</Text>
       </TouchableOpacity>
     );
@@ -331,6 +333,7 @@ var styles = StyleSheet.create({
   },
   customTitle: {
     color: 'white',
+    fontFamily: 'Brandon Grotesque'
   },
   customTitleBold: {
     color: 'white',
