@@ -95,7 +95,7 @@ let mockData = [
         size: 'S',
         color: 'Black',
         quantity: 1,
-        image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-ff07/k2-_2a609791-dce8-4b9c-8e18-2ea4b11ba22c.v3.jpg'
+        image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-888b/k2-_76fe3511-1700-4256-ad3a-fed309aab932.v1.jpg'
       },
       {
         title: 'Faded Glory Women\'s Super Soft French Terry Skinny Jeans',
