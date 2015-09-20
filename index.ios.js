@@ -66,7 +66,13 @@ class EmptyPage extends React.Component {
           pickupLocation: 'A',
           items: [
             {
-              image: 'http://i5.walmartimages.com/dfw/dce07b8c-1b24/k2-_6883b400-953a-4171-9da3-3cac0b502f47.v1.jpg'
+              title: 'Men\'s Solid Dress Shirt with Matching Tie',
+              walmartNumber: '554222918',
+              price: 12,
+              size: 'S',
+              color: 'Charcoal',
+              quantity: 1,
+              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-8ad7/k2-_1e1f4d10-8ce1-4b1c-8366-7bd10c493afb.v1.jpg-49fabc758118a5f19d75ca5096137a2550d560e1-webp-450x450.jpg'
             },
             {
               image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-ff07/k2-_2a609791-dce8-4b9c-8e18-2ea4b11ba22c.v3.jpg-b9a07f3ea413c5a38f76a34ba7365e1404207a83-webp-450x450.jpg'
@@ -91,13 +97,13 @@ class EmptyPage extends React.Component {
               image: 'http://i5.walmartimages.com/dfw/dce07b8c-1b24/k2-_6883b400-953a-4171-9da3-3cac0b502f47.v1.jpg'
             },
             {
-              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-ff07/k2-_2a609791-dce8-4b9c-8e18-2ea4b11ba22c.v3.jpg-b9a07f3ea413c5a38f76a34ba7365e1404207a83-webp-450x450.jpg'
+              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-ff07/k2-_2a609791-dce8-4b9c-8e18-2ea4b11ba22c.v3.jpg'
             },
             {
-              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-20a3/k2-_64c47dad-5d13-4f20-82fb-caa3a793d9ab.v1.jpg-5873a66dd7e0ed3ac2db50252fa0ec12f9c30999-webp-450x450.jpg'
+              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-20a3/k2-_64c47dad-5d13-4f20-82fb-caa3a793d9ab.v1.jpg'
             },
             {
-              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-5433/k2-_30a6bd22-4a19-4be8-bdb3-490d3ae31a4c.v6.jpg-9e658601edc1d17dc97bc281105c01afb13c9855-webp-450x450.jpg'
+              image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-5433/k2-_30a6bd22-4a19-4be8-bdb3-490d3ae31a4c.v6.jpg'
             }
           ]
         },
@@ -149,11 +155,14 @@ class EmptyPage extends React.Component {
     };
   }
 
-  onPressRow(rowID) {
+  onPressRow(item) {
+    console.log(item);
     this.props.navigator.push({
-      title: "YOYO",
+      title: `#${item.walmartNumber}`,
       component: ProductPage,
-
+      passProps: {
+        item: item
+      }
     })
 
   }
@@ -175,25 +184,50 @@ class EmptyPage extends React.Component {
 
     let items = rowData.items.map((item) => {
       return (
-        <TouchableHighlight onPress={() => this.onPressRow(rowID)}>
+        <TouchableHighlight key={item.image} onPress={() => this.onPressRow(item)}>
           <Image style={styles.item} source={{ uri: item.image }}/>
         </TouchableHighlight>
       );
     });
 
+    let statusIcon;
     let statusText;
     let statusColor;
 
     switch (rowData.status) {
       case 'in_progress':
+        statusIcon = (
+          <Icon
+            name='ion|ios-pulse-strong'
+            size={12}
+            color='#f39c12'
+            style={styles.icon}
+          />
+        );
         statusText = 'In Progress';
-        statusColor = '#f1c40f';
+        statusColor = '#f39c12';
         break;
       case 'ready':
+        statusIcon = (
+          <Icon
+            name='ion|checkmark-circled'
+            size={12}
+            color='#2ecc71'
+            style={styles.icon}
+            />
+        );
         statusText = 'Ready for Pickup';
         statusColor = '#2ecc71';
         break;
       case 'received':
+        statusIcon = (
+          <Icon
+            name='ion|clipboard'
+            size={12}
+            color='#3498db'
+            style={styles.icon}
+            />
+        );
         statusText = 'Order Received';
         statusColor = '#3498db';
         break;
@@ -201,15 +235,17 @@ class EmptyPage extends React.Component {
         statusText = 'TBD';
     }
 
-
     return (
       <View>
         <View style={styles.row}>
           <Image style={styles.avatar} source={{ uri: rowData.customer.photo }}/>
           <View style={{ flexDirection: 'column' }}>
-            <Text style={{ fontSize: 12, fontWeight: '600', color: statusColor }}>
-              {statusText.toUpperCase()}
-            </Text>
+            <View style={{ flexDirection: 'row'}}>
+              {statusIcon}
+              <Text style={{ fontSize: 12, fontWeight: '600', color: statusColor }}>
+                {statusText.toUpperCase()}
+              </Text>
+            </View>
             <Text style={{ fontSize: 12, fontWeight: '600', paddingVertical: 5 }}>
               {rowData.customer.name}
             </Text>
@@ -247,21 +283,6 @@ class CustomTitle extends React.Component {
     );
   }
 }
-
-//class CustomPrevButton extends React.Component {
-//  render() {
-//    return (
-//      <TouchableOpacity onPress={() => alert('Menu') }>
-//        <Icon
-//          name='ion|navicon'
-//          size={30}
-//          color='white'
-//          style={styles.icon}
-//          />
-//      </TouchableOpacity>
-//    );
-//  }
-//}
 
 class CustomNextButton extends React.Component {
   render() {
@@ -342,10 +363,9 @@ var styles = StyleSheet.create({
     fontFamily: 'Brandon Grotesque'
   },
   icon: {
-    width: 30,
-    height: 30,
-    top: 25,
-    left: 10
+    width: 12,
+    height: 12,
+    marginRight: 4
   },
   avatar: {
     marginRight: 15,
@@ -384,6 +404,77 @@ var styles = StyleSheet.create({
   modalButton: {
     marginTop: 10,
   },
+  markAsDone: {
+    backgroundColor: 'black',
+    padding: 12,
+    marginHorizontal: 15,
+    marginBottom: 15,
+
+  },
+  markAsDoneText: {
+    fontSize: 12,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  productPage: {
+    flex: 1,
+    paddingTop: 64,
+    justifyContent: 'space-around',
+  },
+  productPageInnerContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  productImage: {
+    flex: 1,
+    width: 450,
+    height: 450,
+    marginBottom: 10
+  },
+  productTitle: {
+    fontWeight: 'bold',
+    fontSize: 12
+
+  },
+  productNumber: {
+    fontSize: 12
+
+  },
+  productPrice: {
+    fontWeight: 'bold',
+    fontSize: 12
+  },
+  productInfo: {
+    flexDirection: 'row' ,
+    marginTop: 15
+  },
+  productQty: {
+    fontWeight: 'bold',
+    fontSize: 12
+  },
+  productSize: {
+    fontWeight: 'bold',
+    fontSize: 12
+  },
+  productSizeButton: {
+    marginLeft: 14,
+    marginRight: 7,
+    marginBottom: 10,
+    flex: 1,
+    padding: 8,
+    borderWidth: 2,
+    borderColor: 'black'
+  },
+  productQtyButton: {
+    marginLeft: 7,
+    marginRight: 14,
+    marginBottom: 10,
+    flex: 1,
+    padding: 8,
+    borderWidth: 2,
+    borderColor: 'black'
+  }
 });
 
 var Button = React.createClass({
@@ -424,19 +515,29 @@ class ProductPage extends React.Component {
   }
 
   render() {
+    let item = this.props.item;
+
     return (
-      <View style={styles.container}>
-        <Image
-          source={{ uri: 'http://ll-us-i5.wal.co/dfw/dce07b8c-ff07/k2-_2a609791-dce8-4b9c-8e18-2ea4b11ba22c.v3.jpg-b9a07f3ea413c5a38f76a34ba7365e1404207a83-webp-450x450.jpg' }}/>
-        <Text>NAME</Text>
-        <Text>Description</Text>
-        <Text>Price</Text>
-        <View style={{flexDirection: 'row'}}>
-          <Text>Size: 42 FR</Text>
-          <Text>Qty: 1</Text>
+      <View style={styles.productPage}>
+        <View style={styles.productPageInnerContainer}>
+          <Image
+            style={styles.productImage}
+            source={{ uri: item.image }}/>
+          <Text style={styles.productTitle}>{item.title.toUpperCase()}</Text>
+          <Text style={styles.productNumber}>Walmart #{item.walmartNumber}</Text>
+          <Text style={styles.productPrice}>{'$' + parseFloat(item.price).toFixed(2)}</Text>
         </View>
-        <TouchableHighlight>
-          <Text>Mark as Done</Text>
+
+        <View style={styles.productInfo}>
+          <TouchableOpacity style={styles.productSizeButton}>
+            <Text style={styles.productSize}>Size: {item.size}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.productQtyButton}>
+            <Text style={styles.productQty}>Qty: {item.quantity}</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableHighlight style={styles.markAsDone}>
+          <Text style={styles.markAsDoneText}>MARK AS DONE</Text>
         </TouchableHighlight>
       </View>
     )
