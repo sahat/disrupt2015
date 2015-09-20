@@ -17,8 +17,6 @@
 {
   NSURL *jsCodeLocation;
 
-  NSLog(@"Available fonts: %@", [UIFont familyNames]);
-
   /**
    * Loading JavaScript code - uncomment the one you want.
    *

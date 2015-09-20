@@ -26,6 +26,25 @@
 		3FDB68AE1BAE31630043BC69 /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68AA1BAE31630043BC69 /* Brandon_blk.otf */; settings = {ASSET_TAGS = (); }; };
 		3FDB68AF1BAE31630043BC69 /* Brandon_med.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68AB1BAE31630043BC69 /* Brandon_med.otf */; settings = {ASSET_TAGS = (); }; };
 		3FDB68B01BAE31630043BC69 /* Brandon_thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68AC1BAE31630043BC69 /* Brandon_thin.otf */; settings = {ASSET_TAGS = (); }; };
+		3FDB68C21BAE63730043BC69 /* libReactNativeIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDB68C11BAE634F0043BC69 /* libReactNativeIcons.a */; };
+		3FDB68D61BAE64900043BC69 /* FAKFontAwesome.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68C41BAE63A90043BC69 /* FAKFontAwesome.h */; };
+		3FDB68D71BAE64900043BC69 /* FAKFontAwesome.m in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68C51BAE63A90043BC69 /* FAKFontAwesome.m */; };
+		3FDB68D81BAE64900043BC69 /* FAKFoundationIcons.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68C61BAE63A90043BC69 /* FAKFoundationIcons.h */; };
+		3FDB68D91BAE64900043BC69 /* FAKFoundationIcons.m in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68C71BAE63A90043BC69 /* FAKFoundationIcons.m */; };
+		3FDB68DA1BAE64900043BC69 /* FAKIcon.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68C81BAE63A90043BC69 /* FAKIcon.h */; };
+		3FDB68DB1BAE64900043BC69 /* FAKIcon.m in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68C91BAE63A90043BC69 /* FAKIcon.m */; };
+		3FDB68DC1BAE64900043BC69 /* FAKIonIcons.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68CA1BAE63A90043BC69 /* FAKIonIcons.h */; };
+		3FDB68DD1BAE64900043BC69 /* FAKIonIcons.m in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68CB1BAE63A90043BC69 /* FAKIonIcons.m */; };
+		3FDB68DE1BAE64900043BC69 /* FAKMaterial.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68CC1BAE63A90043BC69 /* FAKMaterial.h */; };
+		3FDB68DF1BAE64900043BC69 /* FAKMaterial.m in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68CD1BAE63A90043BC69 /* FAKMaterial.m */; };
+		3FDB68E01BAE64900043BC69 /* FAKZocial.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68CE1BAE63A90043BC69 /* FAKZocial.h */; };
+		3FDB68E11BAE64900043BC69 /* FAKZocial.m in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68CF1BAE63A90043BC69 /* FAKZocial.m */; };
+		3FDB68E21BAE64900043BC69 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68D01BAE63A90043BC69 /* FontAwesome.otf */; };
+		3FDB68E31BAE64900043BC69 /* FontAwesomeKit.h in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68D11BAE63A90043BC69 /* FontAwesomeKit.h */; };
+		3FDB68E41BAE64900043BC69 /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68D21BAE63A90043BC69 /* foundation-icons.ttf */; };
+		3FDB68E51BAE64900043BC69 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68D31BAE63A90043BC69 /* ionicons.ttf */; };
+		3FDB68E61BAE64900043BC69 /* Material-Design-Iconic-Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68D41BAE63A90043BC69 /* Material-Design-Iconic-Font.ttf */; };
+		3FDB68E71BAE64900043BC69 /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FDB68D51BAE63A90043BC69 /* zocial-regular-webfont.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +112,13 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		3FDB68C01BAE634F0043BC69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FDB68BC1BAE634E0043BC69 /* ReactNativeIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2F5A3EB81ACDBF8000439386;
+			remoteInfo = ReactNativeIcons;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -133,6 +159,25 @@
 		3FDB68AA1BAE31630043BC69 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
 		3FDB68AB1BAE31630043BC69 /* Brandon_med.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_med.otf; sourceTree = "<group>"; };
 		3FDB68AC1BAE31630043BC69 /* Brandon_thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_thin.otf; sourceTree = "<group>"; };
+		3FDB68BC1BAE634E0043BC69 /* ReactNativeIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeIcons.xcodeproj; path = "../node_modules/react-native-icons/ios/ReactNativeIcons.xcodeproj"; sourceTree = "<group>"; };
+		3FDB68C41BAE63A90043BC69 /* FAKFontAwesome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAKFontAwesome.h; sourceTree = "<group>"; };
+		3FDB68C51BAE63A90043BC69 /* FAKFontAwesome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAKFontAwesome.m; sourceTree = "<group>"; };
+		3FDB68C61BAE63A90043BC69 /* FAKFoundationIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAKFoundationIcons.h; sourceTree = "<group>"; };
+		3FDB68C71BAE63A90043BC69 /* FAKFoundationIcons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAKFoundationIcons.m; sourceTree = "<group>"; };
+		3FDB68C81BAE63A90043BC69 /* FAKIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAKIcon.h; sourceTree = "<group>"; };
+		3FDB68C91BAE63A90043BC69 /* FAKIcon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAKIcon.m; sourceTree = "<group>"; };
+		3FDB68CA1BAE63A90043BC69 /* FAKIonIcons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAKIonIcons.h; sourceTree = "<group>"; };
+		3FDB68CB1BAE63A90043BC69 /* FAKIonIcons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAKIonIcons.m; sourceTree = "<group>"; };
+		3FDB68CC1BAE63A90043BC69 /* FAKMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAKMaterial.h; sourceTree = "<group>"; };
+		3FDB68CD1BAE63A90043BC69 /* FAKMaterial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAKMaterial.m; sourceTree = "<group>"; };
+		3FDB68CE1BAE63A90043BC69 /* FAKZocial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAKZocial.h; sourceTree = "<group>"; };
+		3FDB68CF1BAE63A90043BC69 /* FAKZocial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAKZocial.m; sourceTree = "<group>"; };
+		3FDB68D01BAE63A90043BC69 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		3FDB68D11BAE63A90043BC69 /* FontAwesomeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontAwesomeKit.h; sourceTree = "<group>"; };
+		3FDB68D21BAE63A90043BC69 /* foundation-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "foundation-icons.ttf"; sourceTree = "<group>"; };
+		3FDB68D31BAE63A90043BC69 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
+		3FDB68D41BAE63A90043BC69 /* Material-Design-Iconic-Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Material-Design-Iconic-Font.ttf"; sourceTree = "<group>"; };
+		3FDB68D51BAE63A90043BC69 /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDB68C21BAE63730043BC69 /* libReactNativeIcons.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -271,6 +317,39 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		3FDB68BD1BAE634E0043BC69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FDB68C11BAE634F0043BC69 /* libReactNativeIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FDB68C31BAE63A90043BC69 /* FontAwesomeKit */ = {
+			isa = PBXGroup;
+			children = (
+				3FDB68C41BAE63A90043BC69 /* FAKFontAwesome.h */,
+				3FDB68C51BAE63A90043BC69 /* FAKFontAwesome.m */,
+				3FDB68C61BAE63A90043BC69 /* FAKFoundationIcons.h */,
+				3FDB68C71BAE63A90043BC69 /* FAKFoundationIcons.m */,
+				3FDB68C81BAE63A90043BC69 /* FAKIcon.h */,
+				3FDB68C91BAE63A90043BC69 /* FAKIcon.m */,
+				3FDB68CA1BAE63A90043BC69 /* FAKIonIcons.h */,
+				3FDB68CB1BAE63A90043BC69 /* FAKIonIcons.m */,
+				3FDB68CC1BAE63A90043BC69 /* FAKMaterial.h */,
+				3FDB68CD1BAE63A90043BC69 /* FAKMaterial.m */,
+				3FDB68CE1BAE63A90043BC69 /* FAKZocial.h */,
+				3FDB68CF1BAE63A90043BC69 /* FAKZocial.m */,
+				3FDB68D01BAE63A90043BC69 /* FontAwesome.otf */,
+				3FDB68D11BAE63A90043BC69 /* FontAwesomeKit.h */,
+				3FDB68D21BAE63A90043BC69 /* foundation-icons.ttf */,
+				3FDB68D31BAE63A90043BC69 /* ionicons.ttf */,
+				3FDB68D41BAE63A90043BC69 /* Material-Design-Iconic-Font.ttf */,
+				3FDB68D51BAE63A90043BC69 /* zocial-regular-webfont.ttf */,
+			);
+			path = FontAwesomeKit;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +386,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				3FDB68C31BAE63A90043BC69 /* FontAwesomeKit */,
+				3FDB68BC1BAE634E0043BC69 /* ReactNativeIcons.xcodeproj */,
 				3FDB689E1BAE31420043BC69 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* disrupt2015 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -370,7 +451,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -430,6 +511,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 3FDB68BD1BAE634E0043BC69 /* Products */;
+					ProjectRef = 3FDB68BC1BAE634E0043BC69 /* ReactNativeIcons.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -497,6 +582,13 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		3FDB68C11BAE634F0043BC69 /* libReactNativeIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeIcons.a;
+			remoteRef = 3FDB68C01BAE634F0043BC69 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -525,6 +617,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDB68D61BAE64900043BC69 /* FAKFontAwesome.h in Resources */,
+				3FDB68D71BAE64900043BC69 /* FAKFontAwesome.m in Resources */,
+				3FDB68D81BAE64900043BC69 /* FAKFoundationIcons.h in Resources */,
+				3FDB68D91BAE64900043BC69 /* FAKFoundationIcons.m in Resources */,
+				3FDB68DA1BAE64900043BC69 /* FAKIcon.h in Resources */,
+				3FDB68DB1BAE64900043BC69 /* FAKIcon.m in Resources */,
+				3FDB68DC1BAE64900043BC69 /* FAKIonIcons.h in Resources */,
+				3FDB68DD1BAE64900043BC69 /* FAKIonIcons.m in Resources */,
+				3FDB68DE1BAE64900043BC69 /* FAKMaterial.h in Resources */,
+				3FDB68DF1BAE64900043BC69 /* FAKMaterial.m in Resources */,
+				3FDB68E01BAE64900043BC69 /* FAKZocial.h in Resources */,
+				3FDB68E11BAE64900043BC69 /* FAKZocial.m in Resources */,
+				3FDB68E21BAE64900043BC69 /* FontAwesome.otf in Resources */,
+				3FDB68E31BAE64900043BC69 /* FontAwesomeKit.h in Resources */,
+				3FDB68E41BAE64900043BC69 /* foundation-icons.ttf in Resources */,
+				3FDB68E51BAE64900043BC69 /* ionicons.ttf in Resources */,
+				3FDB68E61BAE64900043BC69 /* Material-Design-Iconic-Font.ttf in Resources */,
+				3FDB68E71BAE64900043BC69 /* zocial-regular-webfont.ttf in Resources */,
 				3FDB68AE1BAE31630043BC69 /* Brandon_blk.otf in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				3FDB68B01BAE31630043BC69 /* Brandon_thin.otf in Resources */,
@@ -593,6 +703,7 @@
 				INFOPLIST_FILE = disrupt2015Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/disrupt2015.app/disrupt2015";
 			};
@@ -610,6 +721,7 @@
 				INFOPLIST_FILE = disrupt2015Tests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/disrupt2015.app/disrupt2015";
 			};
@@ -625,8 +737,10 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				INFOPLIST_FILE = disrupt2015/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = disrupt2015;
 			};
 			name = Debug;
@@ -641,8 +755,10 @@
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
 				INFOPLIST_FILE = disrupt2015/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = disrupt2015;
 			};
 			name = Release;
@@ -667,6 +783,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -686,7 +803,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -726,7 +843,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
