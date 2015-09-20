@@ -118,81 +118,81 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    margin: 10
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
+    marginBottom: 5
   },
   tabContent: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'center'
   },
   tabText: {
     color: 'white',
     fontFamily: 'Brandon Grotesque',
-    margin: 50,
+    margin: 50
   },
   customWrapperStyle: {
-    backgroundColor: '#bbdddd',
+    backgroundColor: '#bbdddd'
   },
   emptyPage: {
     flex: 1,
-    paddingTop: 64,
+    paddingTop: 64
   },
   emptyPageText: {
-    margin: 10,
+    margin: 10
   },
   list: {
     backgroundColor: '#eeeeee',
-    marginTop: 10,
+    marginTop: 10
   },
   group: {
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   groupSpace: {
-    height: 15,
+    height: 15
   },
   line: {
     backgroundColor: '#bbbbbb',
-    height: 1 / PixelRatio.get(),
+    height: 1 / PixelRatio.get()
   },
   row: {
     backgroundColor: 'white',
     justifyContent: 'center',
     paddingHorizontal: 15,
-    paddingVertical: 15,
+    paddingVertical: 15
   },
   separator: {
     height: 1 / PixelRatio.get(),
     backgroundColor: '#bbbbbb',
-    marginLeft: 15,
+    marginLeft: 15
   },
   rowNote: {
-    fontSize: 17,
+    fontSize: 17
   },
   rowText: {
     fontSize: 17,
-    fontWeight: '500',
+    fontWeight: '500'
   },
   customTitleContainer: {
     flexDirection: 'row',
-    top: -8,
+    top: -8
   },
   customTitle: {
     color: 'white',
-    fontFamily: 'Brandon Grotesque',
+    fontFamily: 'Brandon Grotesque'
   },
   customTitleBold: {
     color: 'white',
     fontFamily: 'Brandon Grotesque',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   navigationBar: {
     fontFamily: 'Brandon Grotesque',
