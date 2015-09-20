@@ -21,53 +21,33 @@ var {
   PixelRatio,
   TabBarIOS,
   Navigator,
-  TouchableOpacity
+  NavigatorIOS,
+  TouchableOpacity,
+  Modal,
+  SwitchIOS
   } = React;
 
 
 var disrupt2015 = React.createClass({
-
-  renderScene: function(route, navigator) {
-    var Component = route.component;
-    var navBar = route.navigationBar;
-
-    if (navBar) {
-      navBar = React.addons.cloneWithProps(navBar, {
-        navigator: navigator,
-        route: route
-      });
-    }
-
-    return (
-      <View style={{ flex: 1 }}>
-        {navBar}
-        <Component navigator={navigator} route={route}/>
-      </View>
-    );
+  statics: {
+    title: '<NavigatorIOS>',
+    description: 'iOS navigation capabilities',
   },
 
   render: function() {
     return (
-      <Navigator
-        renderScene={this.renderScene}
+      <NavigatorIOS
+        barTintColor="black"
+        tintColor="white"
+        titleTextColor="white"
+        style={styles.wrapper}
         initialRoute={{
-          component: EmptyPage,
-          navigationBar: (
-            <NavigationBar
-              customTitle={<CustomTitle/>}
-              buttonsColor="white"
-              titleColor="white"
-              statusBar="lightContent"
-              customNext={<CustomNextButton />}
-              customPrev={<CustomPrevButton />}
-              onNext={() => alert('Next button click handler')}
-              onPrev={() => alert('Prev button click handler')}
-              style={styles.navigationBar}
-            />
-          )
+            title: 'Pickup Club',
+            component: EmptyPage,
+            rightButtonTitle: 'Sign in'
         }}
         />
-    );
+    )
   }
 });
 
@@ -170,32 +150,40 @@ class EmptyPage extends React.Component {
   }
 
   onPressRow(rowID) {
-    console.log('Pressed', rowID);
+    this.props.navigator.push({
+      title: "YOYO",
+      component: ProductPage,
+
+    })
+
   }
 
   renderRow(rowData, sectionID, rowID) {
-    var pickupLocation = rowData.pickupLocation ? (
-      <View style={{ flexDirection: 'row' }}>
-        <Text style={{ fontFamily: 'Brandon Grotesque' }}>Pick-up Location: </Text>
-        <Text style={{ fontFamily: 'Brandon Grotesque', fontWeight: 'bold' }}>{rowData.pickupLocation}</Text>
+    let pickupLocation = rowData.pickupLocation ? (
+      <View style={{  flexDirection: 'row' }}>
+        <Text style={{ fontSize: 12 }}>Pick-up Location: </Text>
+        <Text style={{ fontSize: 12, fontWeight: '600' }}>{rowData.pickupLocation}</Text>
       </View>
     ) : null;
 
-    var pickupTime = rowData.pickupTime ? (
+    let pickupTime = rowData.pickupTime ? (
       <View style={{ flexDirection: 'row' }}>
-        <Text style={{ fontFamily: 'Brandon Grotesque' }}>Pick-up Time: </Text>
-        <Text style={{ fontFamily: 'Brandon Grotesque', fontWeight: 'bold' }}>{rowData.pickupTime}</Text>
+        <Text style={{ fontSize: 12 }}>Pick-up Time: </Text>
+        <Text style={{ fontSize: 12, fontWeight: '600' }}>{rowData.pickupTime}</Text>
       </View>
     ) : null;
 
-    var items = rowData.items.map((item) => {
+    let items = rowData.items.map((item) => {
       return (
-        <Image style={styles.item} source={{ uri: item.image }}/>
-      )
+        <TouchableHighlight onPress={() => this.onPressRow(rowID)}>
+          <Image style={styles.item} source={{ uri: item.image }}/>
+        </TouchableHighlight>
+      );
     });
 
-    var statusText;
-    var statusColor;
+    let statusText;
+    let statusColor;
+
     switch (rowData.status) {
       case 'in_progress':
         statusText = 'In Progress';
@@ -213,28 +201,27 @@ class EmptyPage extends React.Component {
         statusText = 'TBD';
     }
 
+
     return (
-      <TouchableHighlight onPress={() => this.onPressRow(rowID)}>
-        <View>
-          <View style={styles.row}>
-            <Image style={styles.avatar} source={{ uri: rowData.customer.photo }}/>
-            <View style={{ flexDirection: 'column' }}>
-              <Text style={{ fontWeight: 'bold', fontFamily: 'Brandon Grotesque', color: statusColor }}>
-                {statusText.toUpperCase()}
-              </Text>
-              <Text style={{ fontFamily: 'Brandon Grotesque' }}>
-                {rowData.customer.name}
-              </Text>
-              {pickupLocation}
-              {pickupTime}
-            </View>
+      <View>
+        <View style={styles.row}>
+          <Image style={styles.avatar} source={{ uri: rowData.customer.photo }}/>
+          <View style={{ flexDirection: 'column' }}>
+            <Text style={{ fontSize: 12, fontWeight: '600', color: statusColor }}>
+              {statusText.toUpperCase()}
+            </Text>
+            <Text style={{ fontSize: 12, fontWeight: '600', paddingVertical: 5 }}>
+              {rowData.customer.name}
+            </Text>
+            {pickupLocation}
+            {pickupTime}
           </View>
-          <View style={styles.row}>
-            {items}
-          </View>
-          <View style={styles.separator}/>
         </View>
-      </TouchableHighlight>
+        <View style={styles.row}>
+          {items}
+        </View>
+        <View style={styles.separator}/>
+      </View>
     );
   }
 
@@ -243,7 +230,7 @@ class EmptyPage extends React.Component {
       <View style={styles.container}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this.renderRow}
+          renderRow={this.renderRow.bind(this)}
           />
       </View>
     );
@@ -261,20 +248,20 @@ class CustomTitle extends React.Component {
   }
 }
 
-class CustomPrevButton extends React.Component {
-  render() {
-    return (
-      <TouchableOpacity onPress={() => alert('Menu') }>
-        <Icon
-          name='ion|navicon'
-          size={30}
-          color='white'
-          style={styles.icon}
-          />
-      </TouchableOpacity>
-    );
-  }
-}
+//class CustomPrevButton extends React.Component {
+//  render() {
+//    return (
+//      <TouchableOpacity onPress={() => alert('Menu') }>
+//        <Icon
+//          name='ion|navicon'
+//          size={30}
+//          color='white'
+//          style={styles.icon}
+//          />
+//      </TouchableOpacity>
+//    );
+//  }
+//}
 
 class CustomNextButton extends React.Component {
   render() {
@@ -287,6 +274,9 @@ class CustomNextButton extends React.Component {
 }
 
 var styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+  },
   customWrapperStyle: {
     backgroundColor: '#bbdddd'
   },
@@ -313,11 +303,12 @@ var styles = StyleSheet.create({
   },
   row: {
     marginHorizontal: 15,
-
+    marginVertical: 5,
     flexDirection: 'row',
     backgroundColor: 'white',
     paddingVertical: 5
   },
+
 
   separator: {
     height: 1 / PixelRatio.get(),
@@ -336,11 +327,9 @@ var styles = StyleSheet.create({
   },
   customTitle: {
     color: 'white',
-    fontFamily: 'Brandon Grotesque'
   },
   customTitleBold: {
     color: 'white',
-    fontFamily: 'Brandon Grotesque',
     fontWeight: 'bold'
   },
   navigationBar: {
@@ -372,8 +361,88 @@ var styles = StyleSheet.create({
     borderRadius: 6,
     width: 40,
     height: 40
+  },
+  innerContainer: {
+    borderRadius: 10,
+  },
+  rowTitle: {
+    flex: 1,
+    fontWeight: 'bold',
+  },
+  button: {
+    borderRadius: 5,
+    flex: 1,
+    height: 44,
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  buttonText: {
+    fontSize: 18,
+    margin: 5,
+    textAlign: 'center',
+  },
+  modalButton: {
+    marginTop: 10,
+  },
+});
+
+var Button = React.createClass({
+  getInitialState() {
+    return {
+      active: false,
+    };
+  },
+
+  _onHighlight() {
+    this.setState({ active: true });
+  },
+
+  _onUnhighlight() {
+    this.setState({ active: false });
+  },
+
+  render() {
+    var colorStyle = {
+      color: this.state.active ? '#fff' : '#000'
+    };
+    return (
+      <TouchableHighlight
+        onHideUnderlay={this._onUnhighlight}
+        onPress={this.props.onPress}
+        onShowUnderlay={this._onHighlight}
+        style={[styles.button, this.props.style]}
+        underlayColor="#a9d9d4">
+        <Text style={[styles.buttonText, colorStyle]}>{this.props.children}</Text>
+      </TouchableHighlight>
+    );
   }
 });
+
+class ProductPage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Image
+          source={{ uri: 'http://ll-us-i5.wal.co/dfw/dce07b8c-ff07/k2-_2a609791-dce8-4b9c-8e18-2ea4b11ba22c.v3.jpg-b9a07f3ea413c5a38f76a34ba7365e1404207a83-webp-450x450.jpg' }}/>
+        <Text>NAME</Text>
+        <Text>Description</Text>
+        <Text>Price</Text>
+        <View style={{flexDirection: 'row'}}>
+          <Text>Size: 42 FR</Text>
+          <Text>Qty: 1</Text>
+        </View>
+        <TouchableHighlight>
+          <Text>Mark as Done</Text>
+        </TouchableHighlight>
+      </View>
+    )
+  }
+
+}
 
 
 AppRegistry.registerComponent('disrupt2015', () => disrupt2015);
