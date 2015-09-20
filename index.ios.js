@@ -183,10 +183,13 @@ class EmptyPage extends React.Component {
     ) : null;
 
     let items = rowData.items.map((item) => {
+      let doneOverlay = item.done && <View style={styles.itemOverlay}></View>;
       return (
-        <TouchableHighlight key={item.image} onPress={() => this.onPressRow(item)}>
-          <Image style={styles.item} source={{ uri: item.image }}/>
-        </TouchableHighlight>
+        <TouchableOpacity key={item.image} onPress={() => this.onPressRow(item)}>
+          <Image style={styles.item} source={{ uri: item.image }}>
+            {doneOverlay}
+          </Image>
+        </TouchableOpacity>
       );
     });
 
@@ -381,6 +384,10 @@ var styles = StyleSheet.create({
     borderRadius: 6,
     width: 40,
     height: 40
+  },
+  itemOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(46,204,113,0.5)'
   },
   innerContainer: {
     borderRadius: 10,
