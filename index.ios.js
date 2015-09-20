@@ -175,11 +175,17 @@ class EmptyPage extends React.Component {
 
   renderRow(rowData, sectionID, rowID) {
     var pickupLocation = rowData.pickupLocation ? (
-      'Pick-up Location: ' + rowData.pickupLocation
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={{ fontFamily: 'Brandon Grotesque' }}>Pick-up Location: </Text>
+        <Text style={{ fontFamily: 'Brandon Grotesque', fontWeight: 'bold' }}>{rowData.pickupLocation}</Text>
+      </View>
     ) : null;
 
     var pickupTime = rowData.pickupTime ? (
-      'Pick-up Time: ' + rowData.pickupTime
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={{ fontFamily: 'Brandon Grotesque' }}>Pick-up Time: </Text>
+        <Text style={{ fontFamily: 'Brandon Grotesque', fontWeight: 'bold' }}>{rowData.pickupTime}</Text>
+      </View>
     ) : null;
 
     var items = rowData.items.map((item) => {
@@ -219,10 +225,8 @@ class EmptyPage extends React.Component {
               <Text style={{ fontFamily: 'Brandon Grotesque' }}>
                 {rowData.customer.name}
               </Text>
-              <Text style={{ fontFamily: 'Brandon Grotesque' }}>
-                {pickupLocation}
-                {pickupTime}
-              </Text>
+              {pickupLocation}
+              {pickupTime}
             </View>
           </View>
           <View style={styles.row}>
