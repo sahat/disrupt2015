@@ -135,6 +135,34 @@ let mockData = [
         image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-4322/k2-_76165eac-7764-4266-af5c-ff2efe92fc4e.v1.jpg'
       }
     ]
+  },
+  {
+    status: 'received',
+    customer: {
+      name: 'Anthony Keeling',
+      photo: 'http://i.imgur.com/ofQ5BQP.jpg'
+    },
+    pickupTime: '8:30 PM',
+    items: [
+      {
+        title: 'Teenage Mutant Ninja Turtles Men\'s Graphic Tee',
+        category: 'Men\'s Graphic Tees',
+        price: 7.50,
+        size: 'S',
+        color: 'Green Heather',
+        quantity: 1,
+        image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-6547/k2-_abff469d-05bc-4d24-9fef-d9dee95894ab.v1.jpg'
+      },
+      {
+        title: 'Cafepress Men\'s Tuxedo Graphic Tee',
+        category: 'Men\'s T-Shirts & Tank Tops',
+        price: 9.97,
+        size: 'S',
+        color: 'Black',
+        quantity: 1,
+        image: 'http://ll-us-i5.wal.co/dfw/dce07b8c-4077/k2-_1c42ff2c-53a3-4493-bd14-22eabf4e9805.v1.jpg'
+      }
+    ]
   }
 ];
 
@@ -394,6 +422,7 @@ var styles = StyleSheet.create({
   },
   item: {
     marginRight: 5,
+    marginVertical: 5,
     //borderWidth: 1,
     //borderColor: '#00ff00',
     width: 40,
